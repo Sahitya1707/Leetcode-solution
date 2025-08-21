@@ -31,25 +31,6 @@ Output: [1]
 
 The solution uses a hash map (dictionary in Python) to count the frequency of each number in the input array. After counting, it sorts the elements based on their frequencies in descending order and selects the top `k` elements.
 
-## Code
-
-```python
-from typing import List
-
-class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        my_dict = {}
-        for num in nums:
-            if num not in my_dict:
-                my_dict[num] = 1
-            else:
-                my_dict[num] += 1
-
-        counts_list = sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
-
-        return [num for num, count in counts_list[:k]]
-```
-
 ### Code Explanation
 
 1.  **Frequency Counting:**
